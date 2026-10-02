@@ -1,0 +1,11 @@
+# OS & IDE Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local server / environment logs
+*.log
+
+# Keep uploads folder structure but allow uploaded files
+!uploads/.gitkeep

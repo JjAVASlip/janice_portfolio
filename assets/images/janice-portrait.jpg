@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1530"/>
+      <stop offset="50%" stop-color="#060810"/>
+      <stop offset="100%" stop-color="#2A164D"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="65%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#7652E8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+  <rect width="100%" height="100%" fill="url(#glow)"/>
+
+  <!-- Geometric Elements -->
+  <circle cx="640" cy="300" r="350" fill="none" stroke="rgba(212,175,55,0.15)" stroke-width="1" stroke-dasharray="6 6"/>
+  <circle cx="640" cy="300" r="450" fill="none" stroke="rgba(40,100,255,0.1)" stroke-width="1"/>
+  <circle cx="160" cy="800" r="250" fill="none" stroke="rgba(118,82,232,0.12)" stroke-width="1"/>
+
+  <!-- Content Box -->
+  <g transform="translate(80, 250)">
+    <!-- Tag -->
+    <rect x="0" y="0" width="204" height="26" rx="13" fill="rgba(255,255,255,0.06)" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
+    <text x="12" y="17" font-family="'Sora', sans-serif" font-size="11" font-weight="600" fill="#D4AF37" letter-spacing="1.5">PORTRAIT PLACEHOLDER</text>
+
+    <!-- Icon Badge -->
+    <g transform="translate(0, 45)">
+      <rect x="0" y="0" width="60" height="60" rx="16" fill="rgba(40,100,255,0.15)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <text x="30" y="38" font-family="'Sora', sans-serif" font-size="24" text-anchor="middle" fill="#F0D77A">JB</text>
+    </g>
+
+    <!-- Title -->
+    <text x="0" y="145" font-family="'Sora', sans-serif" font-size="28" font-weight="700" fill="#F5F3EE" letter-spacing="0.5">Janice Mas Bulanon</text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="175" font-family="'Inter', sans-serif" font-size="14" font-weight="400" fill="#A9B0C0">3rd Year BSIT • National College of Science & Technology</text>
+
+    <!-- Decorative Gold Accent Line -->
+    <line x1="0" y1="205" x2="120" y2="205" stroke="#D4AF37" stroke-width="2"/>
+    <circle cx="120" cy="205" r="3" fill="#D4AF37"/>
+  </g>
+
+  <!-- Watermark -->
+  <text x="770" y="975" font-family="'Sora', sans-serif" font-size="10" font-weight="500" fill="rgba(255,255,255,0.3)" text-anchor="end" letter-spacing="2">JANICE MAS BULANON • BSIT NCST</text>
+</svg>

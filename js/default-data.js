@@ -1,0 +1,385 @@
+// Default Portfolio Initial State Data
+window.defaultPortfolioData = {
+  profile: {
+    name: 'Janice Mas Bulanon',
+    brandName: 'JANICE',
+    role: 'BSIT CANDIDATE',
+    subrole: 'ASPIRING SYSTEMS ANALYST',
+    educationLevel: '3rd Year Student',
+    degree: 'Bachelor of Science in Information Technology',
+    college: 'National College of Science and Technology',
+    collegeShort: 'NCST',
+    shs: 'Pamplona National School of Fisheries',
+    shsStrand: 'STEM Graduate',
+    achievements: [
+      'STEM Graduate with Honors',
+      'Consistent Honor Student'
+    ],
+    headlineLine1: 'MAKING',
+    headlineGradient: 'COMPLEX',
+    headlineLine3: 'SYSTEMS CLEAR',
+    heroBio: "I'm a 3rd year BSIT student exploring systems, workflows, design, and technology to turn ideas into practical digital solutions.",
+    aboutBio1: "I'm a 3rd year Bachelor of Science in Information Technology student at National College of Science and Technology. I'm currently exploring different areas of IT while developing a growing interest in systems analysis, process design, quality assurance, documentation, UI/UX, and web technologies.",
+    aboutBio2: "Rather than claiming to know everything, my goal is to understand how systems work from end to end—identifying what is missing, organizing logical workflows, refining user interfaces, and turning collaborative concepts into dependable digital solutions.",
+    quote: "Progress, not perfection.",
+    philosophy: "Understanding why a system exists before deciding how it should be built.",
+    contactText: "I'm always open to learning, collaboration, academic projects, and opportunities to grow in the IT field. Feel free to reach out for inquiries or discussion.",
+    email: 'janice.bulanon@ncst.edu.ph',
+    linkedin: 'https://linkedin.com',
+    github: 'https://github.com',
+    portraitImage: 'assets/images/janice-portrait.jpg',
+    aboutImage1: 'assets/images/about-01.jpg',
+    aboutImage2: 'assets/images/about-02.jpg',
+    aboutImage3: 'assets/images/about-03.jpg',
+    coreInterests: [
+      'Systems Analysis',
+      'Process & Workflow Design',
+      'Quality Assurance & Review',
+      'Documentation',
+      'UI/UX Planning',
+      'Web Technologies',
+      'Problem Analysis',
+      'Project Organization'
+    ]
+  },
+  projects: [
+    {
+      id: 'studyquest',
+      number: '01',
+      title: 'STUDYQUEST',
+      category: 'COMPROG 1 PROJECT',
+      tagline: 'A gamified academic quest and study tracking application aimed at breaking down coursework into actionable milestones.',
+      description: 'An academic study companion designed to gamify daily study sessions, organize subject modules, and reward completed learning milestones with an intuitive progression system.',
+      role: 'Logic Planning • Flow Design & Testing',
+      technologies: ['Java', 'Logic Formulation', 'UI Wireframing', 'Flowcharting'],
+      image: 'assets/images/studyquest.jpg',
+      cta: 'VIEW PROJECT',
+      problem: 'Students often struggle to track daily study milestones across multiple subjects, leading to cramming and lack of structured revision routines.',
+      approach: 'Designed a quest-based architecture where assignments and topics are converted into discrete missions with checkpoints and progress badges.',
+      myContributionList: [
+        'Mapped core logic flowcharts and quest completion conditions',
+        'Designed modular wireframe concepts for student dashboard',
+        'Conducted logic testing for task status transitions and score calculation',
+        'Documented system requirements and feature specifications'
+      ],
+      teamContributionList: [
+        'Collaborated with team on Java core classes and data structure implementation',
+        'Paired on user feedback collection and test scenario verification'
+      ],
+      processSteps: [
+        { title: 'Needs Analysis', desc: 'Identified pain points in student homework and study routines.' },
+        { title: 'Logic Modeling', desc: 'Created step-by-step flowchart for quests and leveling rules.' },
+        { title: 'Validation & QA', desc: 'Tested edge cases for deadline tracking and state resets.' }
+      ],
+      learning: 'Gained solid foundational skills in turning functional requirements into logical algorithms and structuring dependable flowcharts.'
+    },
+    {
+      id: 'ihelpu',
+      number: '02',
+      title: 'IHELP U',
+      category: 'WEBTECH 2 PROJECT',
+      tagline: 'A responsive community service and assistance request portal connecting users with structured help categories.',
+      description: 'A responsive web platform designed to streamline community service inquiries, submit categorized assistance tickets, and track resolution statuses with clear visual feedback.',
+      role: 'Front-End UI Structuring • Process Flow • Form Validation',
+      technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'UI Design'],
+      image: 'assets/images/ihelpu.jpg',
+      cta: 'VIEW PROJECT',
+      problem: 'Manual requests for assistance often get lost or delayed due to lack of standard categorization and unstructured submission channels.',
+      approach: 'Created clean, responsive intake forms with dynamic validation, accessible category filters, and clear status trackers.',
+      myContributionList: [
+        'Structured front-end HTML/CSS layout and responsive grid components',
+        'Organized form validation rules to prevent incomplete ticket submissions',
+        'Planned user interface navigation hierarchy and visual consistency',
+        'Documented user flows for submitting and checking service tickets'
+      ],
+      teamContributionList: [
+        'Collaborated on back-end service routing logic and data persistence',
+        'Participated in cross-browser UI testing and responsive checks'
+      ],
+      processSteps: [
+        { title: 'UI Wireframing', desc: 'Sketched user intake journeys and form validation hierarchy.' },
+        { title: 'Front-End Build', desc: 'Implemented accessible HTML5 forms with Bootstrap styling.' },
+        { title: 'Usability Testing', desc: 'Checked responsiveness across mobile and desktop devices.' }
+      ],
+      learning: 'Strengthened practical proficiency in modern CSS layout techniques, client-side input validation, and user-centered interface structuring.'
+    },
+    {
+      id: 'oop-project',
+      number: '03',
+      title: 'OOP PROJECT',
+      category: 'OBJECT-ORIENTED PROGRAMMING',
+      tagline: 'An object-oriented management system modeling real-world entities through structured classes and data encapsulation.',
+      description: 'A software system developed to demonstrate core object-oriented principles (Encapsulation, Inheritance, Polymorphism, Abstraction) for structured entity management and records processing.',
+      role: 'Class Diagramming • Requirements Review • QA Testing',
+      technologies: ['Java', 'OOP Principles', 'Data Structures', 'UML Modeling'],
+      image: 'assets/images/oop-project.jpg',
+      cta: 'VIEW PROJECT',
+      problem: 'Managing complex entity relationships with procedural code results in brittle architectures that are difficult to debug and maintain.',
+      approach: 'Designed structured UML class diagrams with clear class hierarchies, inheritance trees, and getter/setter validation barriers.',
+      myContributionList: [
+        'Mapped UML Class Diagrams and entity relationship hierarchies',
+        'Defined functional requirements and test case matrices for methods',
+        'Reviewed class encapsulation to safeguard object state integrity',
+        'Compiled clear technical documentation and method summaries'
+      ],
+      teamContributionList: [
+        'Collaborated with group members on Java controller logic and file I/O',
+        'Coordinated bug triage and shared code review sessions'
+      ],
+      processSteps: [
+        { title: 'UML Modeling', desc: 'Designed class blueprints with inheritance and encapsulation.' },
+        { title: 'Class Implementation', desc: 'Built robust data structures with strict attribute access.' },
+        { title: 'Unit QA', desc: 'Executed test cases for polymorphic behaviors and exceptions.' }
+      ],
+      learning: 'Understood the critical importance of clean modular architecture, accurate class diagrams, and robust error handling in software engineering.'
+    },
+    {
+      id: 'sarismart',
+      number: '04',
+      title: 'SARISMART',
+      category: 'SYSTEM INTEGRATION ARCHITECTURE',
+      tagline: 'A branch-based Point-of-Sale and Human Resource Management System designed to integrate store operations and HR processes.',
+      description: 'A comprehensive academic capstone-level system integration project designed to unify multi-branch inventory tracking, point-of-sale transactions, and employee management into a single cohesive architecture.',
+      role: 'System Analysis • Process Organization • Documentation • UI/UX Planning • System Review',
+      technologies: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
+      image: 'assets/images/sarismart.jpg',
+      cta: 'VIEW CASE STUDY',
+      problem: 'Small-to-medium retail businesses often operate POS transactions and staff scheduling on disconnected spreadsheets, resulting in inventory discrepancies and scheduling conflicts.',
+      approach: 'Integrated relational schema with centralized inventory tables, branch-specific shift logs, and role-based access control for cashiers, managers, and HR administrators.',
+      myContributionList: [
+        'Conducted detailed Systems Analysis and mapped Data Flow Diagrams (DFD Levels 0 & 1)',
+        'Designed Entity Relationship Diagrams (ERD) with relational constraints and foreign keys',
+        'Planned user experience and wireframes for POS terminal and HR administrative dashboards',
+        'Authored comprehensive system documentation, user manuals, and process flowcharts',
+        'Led Quality Assurance reviews, functional testing matrices, and usability checks'
+      ],
+      teamContributionList: [
+        'Collaborated with developers on PHP database connection scripts and SQL queries',
+        'Coordinated sprint milestones, task assignments, and review checkpoints'
+      ],
+      processSteps: [
+        { title: 'System Analysis', desc: 'Mapped business processes, DFDs, and normalized MySQL schemas.' },
+        { title: 'UI/UX Blueprinting', desc: 'Designed intuitive POS cashier and HR management dashboards.' },
+        { title: 'QA & Review', desc: 'Ran comprehensive functional tests and documented edge cases.' }
+      ],
+      learning: 'Solidified my passion for Systems Analysis and Process Organization—seeing how clear diagrams, structured workflows, and thorough QA ensure complex systems run seamlessly.'
+    }
+  ],
+  visuals: [
+    {
+      id: 'vis-01',
+      title: 'SariSmart POS & HR Process Flowchart',
+      category: 'SYSTEMS & FLOWS',
+      type: 'Flowchart / Architecture',
+      tag: 'WORKFLOW',
+      tools: 'Draw.io / Lucidchart',
+      image: 'assets/images/visual-01.jpg',
+      description: 'Complete branch transaction routing from cashier barcode scan, invoice generation, to daily inventory sync and HR shift reconciliation.'
+    },
+    {
+      id: 'vis-02',
+      title: 'Relational Entity Schema (ERD)',
+      category: 'SYSTEMS & FLOWS',
+      type: 'Database Diagram',
+      tag: 'DATA MODEL',
+      tools: 'MySQL Workbench',
+      image: 'assets/images/visual-02.jpg',
+      description: 'Multi-table relational schema covering user roles, employee profiles, inventory items, suppliers, transactions, and audit trail logs.'
+    },
+    {
+      id: 'vis-03',
+      title: 'iHelp U Assistance App UI Screen Suite',
+      category: 'UI/UX & FIGMA',
+      type: 'Figma High-Fidelity',
+      tag: 'UI DESIGN',
+      tools: 'Figma / Auto-Layout',
+      image: 'assets/images/visual-03.jpg',
+      description: 'High-fidelity mobile and desktop responsive wireframe mockups showcasing clean ticket submission pipelines and category filter navigation.'
+    },
+    {
+      id: 'vis-04',
+      title: 'StudyQuest Wireframe & Journey Map',
+      category: 'UI/UX & FIGMA',
+      type: 'Wireframes / UX',
+      tag: 'WIREFRAMES',
+      tools: 'Figma / Paper Prototyping',
+      image: 'assets/images/visual-04.jpg',
+      description: 'User journey sketches and low-fidelity wireframes translating gamified study milestones into a minimal, student-friendly interface.'
+    },
+    {
+      id: 'vis-05',
+      title: 'Quality Assurance Functional Test Matrix',
+      category: 'QA & TESTING',
+      type: 'QA Documentation',
+      tag: 'QUALITY ASSURANCE',
+      tools: 'Excel / Test Case Matrix',
+      image: 'assets/images/visual-05.jpg',
+      description: 'Structured QA checklist testing input boundary conditions, POS inventory deductions, password hashing verification, and responsive viewport checks.'
+    },
+    {
+      id: 'vis-06',
+      title: 'Data Flow Diagram (DFD Level 0 & Level 1)',
+      category: 'SYSTEMS & FLOWS',
+      type: 'DFD Diagram',
+      tag: 'SYSTEM ANALYSIS',
+      tools: 'Systems Analysis Methods',
+      image: 'assets/images/visual-06.jpg',
+      description: 'Context and level-1 data flow diagrams illustrating data store boundaries, external entities, and information exchange protocols.'
+    }
+  ],
+  skills: [
+    {
+      id: 'sk-systems',
+      title: 'SYSTEMS',
+      subtitle: 'Process & Requirements Structuring',
+      icon: '📊',
+      skills: [
+        { name: 'Requirements Analysis', status: 'FAMILIAR' },
+        { name: 'Process Mapping', status: 'FAMILIAR' },
+        { name: 'System Planning', status: 'LEARNING' },
+        { name: 'Workflow Design', status: 'FAMILIAR' }
+      ]
+    },
+    {
+      id: 'sk-quality',
+      title: 'QUALITY',
+      subtitle: 'Review & Reliability Assurance',
+      icon: '🔍',
+      skills: [
+        { name: 'System Review', status: 'FAMILIAR' },
+        { name: 'Functional Testing', status: 'FAMILIAR' },
+        { name: 'Bug Identification', status: 'LEARNING' },
+        { name: 'Usability Checking', status: 'FAMILIAR' }
+      ]
+    },
+    {
+      id: 'sk-design',
+      title: 'DESIGN',
+      subtitle: 'Interface & User Experience',
+      icon: '🎨',
+      skills: [
+        { name: 'UI/UX Planning', status: 'FAMILIAR' },
+        { name: 'Figma', status: 'LEARNING' },
+        { name: 'Wireframing', status: 'FAMILIAR' },
+        { name: 'Visual Organization', status: 'FAMILIAR' }
+      ]
+    },
+    {
+      id: 'sk-technology',
+      title: 'TECHNOLOGY',
+      subtitle: 'Web Tools & Core Platforms',
+      icon: '💻',
+      skills: [
+        { name: 'HTML & CSS', status: 'FAMILIAR' },
+        { name: 'JavaScript & PHP', status: 'LEARNING' },
+        { name: 'MySQL Database', status: 'FAMILIAR' },
+        { name: 'Vue.js & Tailwind', status: 'LEARNING' },
+        { name: 'Git & GitHub', status: 'LEARNING' },
+        { name: 'Cisco Packet Tracer', status: 'EXPLORING' }
+      ]
+    }
+  ],
+  workflow: [
+    {
+      number: '01',
+      title: 'PLAN',
+      phase: 'ORIENTATION & DISCOVERY',
+      tagline: 'Understand the problem and define the goal.',
+      headline: 'Grounding the Project in Real Objectives',
+      detailedDesc: 'Every project begins by clearly defining the core problem statement, identifying user pain points, aligning scope boundaries, and establishing achievable academic or client objectives.',
+      deliverables: [
+        'Problem Statement Definition',
+        'Project Scope & Objective Document',
+        'Initial Resource & Timeline Schedule',
+        'Stakeholder Needs Checklist'
+      ],
+      personalFocus: 'Ensuring that our team does not rush into code before agreeing on the underlying objective.'
+    },
+    {
+      number: '02',
+      title: 'ANALYZE',
+      phase: 'REQUIREMENTS & ARCHITECTURE',
+      tagline: 'Identify requirements, workflows, and missing pieces.',
+      headline: 'Mapping System Relationships & Logic Flows',
+      detailedDesc: 'Examining input and output dependencies, identifying edge cases, mapping Data Flow Diagrams (DFDs), Entity-Relationship Schemas (ERDs), and structuring requirement matrices.',
+      deliverables: [
+        'Functional & Non-Functional Requirements',
+        'Data Flow Diagrams (Level 0 & 1)',
+        'Relational Entity Schema (ERD)',
+        'User Role Permission Maps'
+      ],
+      personalFocus: 'My favorite stage: finding gaps in the logic and transforming vague thoughts into structured charts.'
+    },
+    {
+      number: '03',
+      title: 'DESIGN',
+      phase: 'UI/UX & WIREFRAMING',
+      tagline: 'Organize the process, interface, and system structure.',
+      headline: 'Creating Intuitive Human-Centered Layouts',
+      detailedDesc: 'Translating analyzed requirements into user-friendly layouts, wireframes, and design components. Establishing visual hierarchy, consistent typography, and seamless form input journeys.',
+      deliverables: [
+        'Low-Fidelity Paper & Digital Wireframes',
+        'Figma Interactive UI Screens',
+        'Component Color & Style Rules',
+        'Form Validation Error Feedback Specs'
+      ],
+      personalFocus: 'Making complex data entry clean, predictable, and approachable for non-technical users.'
+    },
+    {
+      number: '04',
+      title: 'DEVELOP',
+      phase: 'IMPLEMENTATION & COORDINATION',
+      tagline: 'Turn the plan into a working digital solution.',
+      headline: 'Building Robust Code Grounded in Design',
+      detailedDesc: 'Constructing front-end interfaces and connecting database queries based strictly on the approved blueprints, adhering to clean coding standards, and preserving version control on Git.',
+      deliverables: [
+        'Modular Front-End UI Components',
+        'Structured Database Queries & Schema',
+        'Version Control Branch Management',
+        'Progress Checkpoint Reviews'
+      ],
+      personalFocus: 'Ensuring code structure matches the planned diagrams and maintaining organized documentation.'
+    },
+    {
+      number: '05',
+      title: 'TEST',
+      phase: 'QUALITY ASSURANCE & POLISH',
+      tagline: 'Review functionality, usability, and quality.',
+      headline: 'Validating Reliability & User Usability',
+      detailedDesc: 'Executing comprehensive functional test matrices, verifying boundary inputs, auditing responsive viewports, tracking bugs, and polishing edge cases before final presentation.',
+      deliverables: [
+        'Functional Test Case Matrices',
+        'Bug Identification & Resolution Log',
+        'Cross-Device Usability Verification',
+        'Final Project Documentation & Manual'
+      ],
+      personalFocus: 'Thoroughly checking details and edge cases to deliver an application that functions without surprises.'
+    }
+  ],
+  inbox: [
+    {
+      id: 'msg-01',
+      name: 'Prof. Garcia (NCST Panel)',
+      email: 'r.garcia@ncst.edu.ph',
+      subject: 'Systems Analysis Defense Review',
+      message: 'Hello Janice, your SariSmart POS workflow and ERD documentation looks very well structured. Good job on the test case matrices.',
+      date: '2026-10-01 14:15',
+      isRead: true
+    },
+    {
+      id: 'msg-02',
+      name: 'Alex Rivera',
+      email: 'alex.rivera@techcollaborators.com',
+      subject: 'Inquiry for Capstone Collaboration',
+      message: 'Hi Janice, I saw your portfolio and your UI/UX wireframes for iHelp U. Would you be interested in participating as our QA and systems lead?',
+      date: '2026-10-02 08:30',
+      isRead: false
+    }
+  ],
+  settings: {
+    adminPasscode: 'admin123',
+    siteTitle: 'Janice Mas Bulanon | BSIT Candidate Portfolio',
+    allowInquiries: true,
+    lastSaved: new Date().toISOString()
+  }
+};
