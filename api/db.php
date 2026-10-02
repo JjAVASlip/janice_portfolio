@@ -1,35 +1,50 @@
 <?php
-// Central MySQL Database Connection & Auto-Migrator for phpMyAdmin & InfinityFree
+// Central MySQL Database Connection for XAMPP Localhost & InfinityFree
+$isLocalhost = in_array($_SERVER['HTTP_HOST'] ?? '', ['localhost', '127.0.0.1']) || php_sapi_name() === 'cli';
 
-$dbHost = getenv('DB_HOST') ?: 'localhost';
-$dbUser = getenv('DB_USER') ?: 'root';
-$dbPass = getenv('DB_PASS') !== false ? getenv('DB_PASS') : '';
-$dbName = getenv('DB_NAME') ?: 'portfolio_janice_db';
+if ($isLocalhost) {
+    // XAMPP Localhost Credentials
+    $dbHost = 'localhost';
+    $dbUser = 'root';
+    $dbPass = '';
+    $dbName = 'portfolio_janice_db';
+} else {
+    // InfinityFree Live Hosting Credentials
+    $dbHost = getenv('DB_HOST') ?: 'sql113.infinityfree.com';
+    $dbUser = getenv('DB_USER') ?: 'if0_43065278';
+    $dbPass = getenv('DB_PASS') !== false ? getenv('DB_PASS') : 'Jjaaa091925';
+    $dbName = getenv('DB_NAME') ?: 'if0_43065278_portfolio_db';
+}
 
 $pdo = null;
 
 try {
-    // 1. Direct connection attempt to the database (Works on InfinityFree & Standard Hostings)
+    // 1. Direct connection attempt to target database
     $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName;charset=utf8mb4", $dbUser, $dbPass, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
     ]);
 } catch (PDOException $e1) {
-    // 2. Localhost fallback: Try creating database if server is reachable (XAMPP localhost)
-    try {
-        $pdoServer = new PDO("mysql:host=$dbHost;charset=utf8mb4", $dbUser, $dbPass, [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-        ]);
-        $pdoServer->exec("CREATE DATABASE IF NOT EXISTS `$dbName` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
-        
-        $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName;charset=utf8mb4", $dbUser, $dbPass, [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-        ]);
-    } catch (PDOException $e2) {
+    // 2. Localhost fallback attempt
+    if ($isLocalhost) {
+        try {
+            $pdoServer = new PDO("mysql:host=$dbHost;charset=utf8mb4", $dbUser, $dbPass, [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            ]);
+            $pdoServer->exec("CREATE DATABASE IF NOT EXISTS `$dbName` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
+            
+            $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName;charset=utf8mb4", $dbUser, $dbPass, [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+            ]);
+        } catch (PDOException $e2) {
+            $pdo = null;
+        }
+    } else {
         $pdo = null;
     }
 }
+
 
 // Auto-migrate tables if connected and tables don't exist yet
 if ($pdo) {
