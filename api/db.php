@@ -1,41 +1,52 @@
 <?php
-// Central MySQL Database Connection & Auto-Migrator for phpMyAdmin
-$dbHost = 'localhost';
-$dbUser = 'root';
-$dbPass = '';
-$dbName = 'portfolio_janice_db';
+// Central MySQL Database Connection & Auto-Migrator for phpMyAdmin & InfinityFree
+
+$dbHost = getenv('DB_HOST') ?: 'localhost';
+$dbUser = getenv('DB_USER') ?: 'root';
+$dbPass = getenv('DB_PASS') !== false ? getenv('DB_PASS') : '';
+$dbName = getenv('DB_NAME') ?: 'portfolio_janice_db';
+
+$pdo = null;
 
 try {
-    // 1. Connect to MySQL server first (without database to ensure DB creation if needed)
-    $pdoServer = new PDO("mysql:host=$dbHost;charset=utf8mb4", $dbUser, $dbPass, [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-    ]);
-
-    // 2. Ensure Database exists
-    $pdoServer->exec("CREATE DATABASE IF NOT EXISTS `$dbName` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
-
-    // 3. Connect to the specific database
+    // 1. Direct connection attempt to the database (Works on InfinityFree & Standard Hostings)
     $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName;charset=utf8mb4", $dbUser, $dbPass, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
     ]);
-
-    // 4. Check if tables exist; if not, execute SQL dump automatically
-    $checkTable = $pdo->query("SHOW TABLES LIKE 'profile'")->fetch();
-    if (!$checkTable) {
-        $sqlFile = dirname(__DIR__) . '/database/portfolio_janice.sql';
-        if (file_exists($sqlFile)) {
-            $sqlContent = file_get_contents($sqlFile);
-            $pdo->exec($sqlContent);
-        }
+} catch (PDOException $e1) {
+    // 2. Localhost fallback: Try creating database if server is reachable (XAMPP localhost)
+    try {
+        $pdoServer = new PDO("mysql:host=$dbHost;charset=utf8mb4", $dbUser, $dbPass, [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+        ]);
+        $pdoServer->exec("CREATE DATABASE IF NOT EXISTS `$dbName` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
+        
+        $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName;charset=utf8mb4", $dbUser, $dbPass, [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+        ]);
+    } catch (PDOException $e2) {
+        $pdo = null;
     }
-
-} catch (PDOException $e) {
-    // Fallback if MySQL server cannot be reached
-    $pdo = null;
-    $dbError = $e->getMessage();
 }
+
+// Auto-migrate tables if connected and tables don't exist yet
+if ($pdo) {
+    try {
+        $checkTable = $pdo->query("SHOW TABLES LIKE 'profile'")->fetch();
+        if (!$checkTable) {
+            $sqlFile = dirname(__DIR__) . '/database/portfolio_janice.sql';
+            if (file_exists($sqlFile)) {
+                $sqlContent = file_get_contents($sqlFile);
+                $pdo->exec($sqlContent);
+            }
+        }
+    } catch (Exception $ex) {
+        // Table check error ignored
+    }
+}
+
 
 /**
  * Fetch full portfolio data object from MySQL database tables
