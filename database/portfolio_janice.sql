@@ -1,11 +1,5 @@
--- phpMyAdmin SQL Dump
--- Database: `portfolio_janice_db`
--- Project: Janice Mas Bulanon Portfolio
-
-CREATE DATABASE IF NOT EXISTS `portfolio_janice_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `portfolio_janice_db`;
-
 -- --------------------------------------------------------
+
 -- Table structure for table `profile`
 -- --------------------------------------------------------
 
